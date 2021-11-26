@@ -4,9 +4,17 @@ import { ContactList } from './components/ContactList/ContactList';
 
 const App:React.FC<{}> = () => {
   return (
-    <div className="App">
+    <main className="App">
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+      <a href="#">
+        Page 1
+      </a>
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+      <a href="#">
+        Page 2
+      </a>
       <ContactList />
-    </div>
+    </main>
   );
 }
 
