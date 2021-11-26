@@ -1,9 +1,11 @@
 import React from 'react';
+import { ContactList } from './components/ContactList/ContactList';
 
-function App() {
+
+const App:React.FC<{}> = () => {
   return (
     <div className="App">
-      12345
+      <ContactList />
     </div>
   );
 }
