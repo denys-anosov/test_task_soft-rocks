@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.js": "/test_task_soft-rocks/static/js/main.c815d21b.chunk.js",
-    "main.js.map": "/test_task_soft-rocks/static/js/main.c815d21b.chunk.js.map",
+    "main.css": "/test_task_soft-rocks/static/css/main.aeb88112.chunk.css",
+    "main.js": "/test_task_soft-rocks/static/js/main.27dc7dbe.chunk.js",
+    "main.js.map": "/test_task_soft-rocks/static/js/main.27dc7dbe.chunk.js.map",
     "runtime-main.js": "/test_task_soft-rocks/static/js/runtime-main.72748780.js",
     "runtime-main.js.map": "/test_task_soft-rocks/static/js/runtime-main.72748780.js.map",
-    "static/js/2.4a20f925.chunk.js": "/test_task_soft-rocks/static/js/2.4a20f925.chunk.js",
-    "static/js/2.4a20f925.chunk.js.map": "/test_task_soft-rocks/static/js/2.4a20f925.chunk.js.map",
+    "static/js/2.92bb2279.chunk.js": "/test_task_soft-rocks/static/js/2.92bb2279.chunk.js",
+    "static/js/2.92bb2279.chunk.js.map": "/test_task_soft-rocks/static/js/2.92bb2279.chunk.js.map",
     "index.html": "/test_task_soft-rocks/index.html",
-    "static/js/2.4a20f925.chunk.js.LICENSE.txt": "/test_task_soft-rocks/static/js/2.4a20f925.chunk.js.LICENSE.txt"
+    "static/css/main.aeb88112.chunk.css.map": "/test_task_soft-rocks/static/css/main.aeb88112.chunk.css.map",
+    "static/js/2.92bb2279.chunk.js.LICENSE.txt": "/test_task_soft-rocks/static/js/2.92bb2279.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.72748780.js",
-    "static/js/2.4a20f925.chunk.js",
-    "static/js/main.c815d21b.chunk.js"
+    "static/js/2.92bb2279.chunk.js",
+    "static/css/main.aeb88112.chunk.css",
+    "static/js/main.27dc7dbe.chunk.js"
   ]
 }
