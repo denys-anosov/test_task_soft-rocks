@@ -1,21 +1,49 @@
 import React from 'react';
-import { ContactList } from './components/ContactList/ContactList';
+import { getUsers } from './api/api';
+import './App.css';
+import {ContactList} from './components/ContactList/ContactList';
+
+interface State {
+  users: User[],
+}
 
 
-const App:React.FC<{}> = () => {
-  return (
-    <main className="App">
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a href="#">
-        Page 1
-      </a>
-      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a href="#">
-        Page 2
-      </a>
-      <ContactList />
-    </main>
-  );
+class App extends React.Component<{}, State> {
+  state: State = {
+    users: [],
+  }
+
+  async componentDidMount () {
+    const loadedUsers = await getUsers();
+
+    this.setState({ users: loadedUsers });
+  }
+
+  addUser = (newUser: User) => {
+    this.setState(prevState => ({
+      users: [...prevState.users, newUser]
+    }))
+  };
+
+  deleteUser = (selectedUserId: number) => {
+    this.setState(prevState => ({
+      users: [...prevState.users.filter(user => user.id !== selectedUserId)]
+    }))
+  };
+
+  render() {
+    const {users} = this.state;
+
+    return (
+      <main className="App">
+        <ContactList
+          visibleUsers={users}
+          onAdd={this.addUser}
+          onDelete={this.deleteUser}
+        />
+      </main>
+    );
+  }
 }
 
 export default App;
