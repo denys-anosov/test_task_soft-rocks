@@ -58,7 +58,7 @@ class App extends React.Component<{}, State> {
       <main className="App">
         <Routes>
           <Route
-            path="test_task_soft-rocks"
+            path="/"
             element={
               <ContactList
                 visibleUsers={users}
@@ -69,12 +69,12 @@ class App extends React.Component<{}, State> {
             }
           />
           <Route
-            path="test_task_soft-rocks/contact-info"
+            path="/contact-info"
             element={<ContactInfo currentUser={this.state.currentUser}/>}
           />
           <Route
             path="*"
-            element={<Navigate to="test_task_soft-rocks" />}
+            element={<Navigate to="/" />}
           />
         </Routes>
       </main>
