@@ -1,5 +1,6 @@
 import React from "react";
 import { ConfirmDelete } from '../ConfirmDelete/ConfirmDelete';
+import './ContactList.css';
 
 interface Props {
   visibleUsers: User[],
@@ -103,10 +104,8 @@ export class ContactList extends React.Component<Props, State> {
                 </button>
               </div>
               <div>
-                <button type="button">
-                  {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
-                  <a href="">More info</a>
-                </button>
+                {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
+                <a href="">More info</a>
               </div>
             </li>
           ))}
@@ -121,6 +120,7 @@ export class ContactList extends React.Component<Props, State> {
             value={name}
             name="name"
             type="text"
+            placeholder="Name"
             required
           />
           <input
@@ -128,12 +128,14 @@ export class ContactList extends React.Component<Props, State> {
             value={username}
             name="username"
             type="text"
+            placeholder="Username"
           />
           <input
             onChange={this.inputHandler}
             value={email}
             name="email"
             type="email"
+            placeholder="Email"
             required
           />
           <input
@@ -141,12 +143,14 @@ export class ContactList extends React.Component<Props, State> {
             value={phone}
             name="phone"
             type="tel"
+            placeholder="Phone"
           />
           <input
             onChange={this.inputHandler}
             value={website}
             name="website"
             type="text"
+            placeholder="Website"
           />
           <button
             type="submit"
