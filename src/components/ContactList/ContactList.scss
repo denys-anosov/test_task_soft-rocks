@@ -1,0 +1,85 @@
+%border {
+  border: 2px solid #FF6347;
+  border-radius: 4px;
+}
+
+%button-styles {
+  height: 25px;
+  cursor: pointer;
+  border: 1px solid #5F9EA0;
+  border-radius: 4px;
+  background-color: #F0F8FF;
+  font-weight: bold;
+  padding: 0;
+}
+
+%button-styles-hover {
+  background-color: #E6E6FA;
+}
+
+.Main {
+  &-heading {
+    margin: 0 0 40px;
+    padding-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-page {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.ContactList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    padding: 15px;
+    margin-bottom: 16px;
+    @extend %border
+  }
+
+  &__button {
+    width: 50%;
+    @extend %button-styles;
+
+    &:hover {
+      @extend %button-styles-hover
+    }
+
+    &--link {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      width: 100%;
+      line-height: 23px;
+    }
+  }
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 15vw;
+  padding: 15px;
+  @extend %border;
+
+  &__name {
+    margin: 0;
+  }
+
+  &__button {
+    width: 100%;
+    @extend %button-styles;
+
+    &:hover {
+      @extend %button-styles-hover
+    }
+  }
+}

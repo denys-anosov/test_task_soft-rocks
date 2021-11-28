@@ -1,0 +1,52 @@
+.Popup {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s all;
+
+  &--active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__heading {
+    margin: 0 0 20px;
+  }
+
+  &__button {
+    width: 50%;
+    height: 25px;
+    cursor: pointer;
+    border: 1px solid #5F9EA0;
+    border-radius: 4px;
+    background-color: #F0F8FF;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #E6E6FA;
+    }
+  }
+}
+
+.Popup__content {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #FFF;
+  width: 15vw;
+  transform: scale(0.5);
+  transition: 0.3s all;
+  text-align: center;
+
+  &--active {
+    transform: scale(1);
+  }
+}
+

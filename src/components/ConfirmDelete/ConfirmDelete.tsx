@@ -1,5 +1,5 @@
 import React from "react";
-import './ConfirmDelete.css';
+import './ConfirmDelete.scss';
 import cn from 'classnames';
 
 interface Props {
@@ -23,25 +23,27 @@ export const ConfirmDelete: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        'popup',
-        {'active': isVisible}
+        'Popup',
+        { 'Popup Popup--active': isVisible }
       )}
       onClick={() => setVisibility(false)}
     >
       <div
         className={cn(
-          'popup__content',
-          {'active': isVisible}
+          'Popup__content',
+          { 'Popup__content Popup__content--active': isVisible }
         )}
         onClick={(event) => event.stopPropagation()}>
-        <p>Do you confirm deletion?</p>
+        <p className="Popup__heading">Do you confirm deletion?</p>
         <button
+          className="Popup__button"
           onClick={() => confirmedDeletionHandler()}
           type="button"
         >
           Yes
         </button>
         <button
+          className="Popup__button"
           type="button"
           onClick={() => setVisibility(false)}
         >
