@@ -1,7 +1,9 @@
 import React from 'react';
 import { getUsers } from './api/api';
 import './App.css';
-import {ContactList} from './components/ContactList/ContactList';
+import { ContactList } from './components/ContactList/ContactList';
+import { ContactInfo } from './components/ContactInfo/ContactInfo';
+import { Routes, Route } from 'react-router-dom';
 
 interface State {
   users: User[],
@@ -36,11 +38,22 @@ class App extends React.Component<{}, State> {
 
     return (
       <main className="App">
-        <ContactList
-          visibleUsers={users}
-          onAdd={this.addUser}
-          onDelete={this.deleteUser}
-        />
+        <Routes>
+          <Route
+            path="test_task_soft-rocks"
+            element={
+              <ContactList
+                visibleUsers={users}
+                onAdd={this.addUser}
+                onDelete={this.deleteUser}
+              />
+            }
+          />
+          <Route
+            path="test_task_soft-rocks/contactinfo"
+            element={<ContactInfo />}
+          />
+        </Routes>
       </main>
     );
   }
