@@ -1,11 +1,13 @@
 import React from "react";
 import { ConfirmDelete } from '../ConfirmDelete/ConfirmDelete';
 import './ContactList.css';
+import {Link} from 'react-router-dom';
 
 interface Props {
   visibleUsers: User[],
   onAdd: (newUser: User) => void,
   onDelete: (selectedUserId: number) => void,
+  onFindUser: (id: number) => void,
 }
 
 interface State {
@@ -105,7 +107,12 @@ export class ContactList extends React.Component<Props, State> {
               </div>
               <div>
                 {/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
-                <a href="">More info</a>
+                <Link
+                  to="contact-info"
+                  onClick={() => this.props.onFindUser(user.id)}
+                >
+                  More info
+                </Link>
               </div>
             </li>
           ))}
