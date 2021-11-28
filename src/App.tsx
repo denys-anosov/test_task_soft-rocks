@@ -3,7 +3,7 @@ import { loadUsers } from './api/api';
 import './App.css';
 import { ContactList } from './components/ContactList/ContactList';
 import { ContactInfo } from './components/ContactInfo/ContactInfo';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 interface State {
   users: User[],
@@ -14,7 +14,14 @@ interface State {
 class App extends React.Component<{}, State> {
   state: State = {
     users: [],
-    currentUser: {} as User,
+    currentUser: {
+      id: 0,
+      name: '',
+      username: '',
+      email: '',
+      phone: '',
+      website: '',
+    },
   }
 
   async componentDidMount () {
@@ -64,6 +71,10 @@ class App extends React.Component<{}, State> {
           <Route
             path="test_task_soft-rocks/contact-info"
             element={<ContactInfo currentUser={this.state.currentUser}/>}
+          />
+          <Route
+            path="*"
+            element={<Navigate to="test_task_soft-rocks" />}
           />
         </Routes>
       </main>

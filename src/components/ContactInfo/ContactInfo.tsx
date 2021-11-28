@@ -4,7 +4,40 @@ interface Props {
   currentUser: User,
 }
 
-export class ContactInfo extends React.Component<Props> {
+interface State {
+  id: number,
+  name: string,
+  username?: string,
+  email: string,
+  phone?: string,
+  website?: string,
+}
+
+export class ContactInfo extends React.Component<Props, State> {
+  state = {
+    id: 0,
+    name: '',
+    username: '',
+    email: '',
+    phone: '',
+    website: '',
+  }
+
+  componentDidMount() {
+    if (this.props.currentUser.id) {
+      const {
+        id,
+        name,
+        username,
+        email,
+        phone,
+        website,
+      } = this.props.currentUser
+
+      this.setState({ id, name, username, email, phone, website });
+    }
+  }
+
   render() {
     const {
       id,
@@ -13,7 +46,7 @@ export class ContactInfo extends React.Component<Props> {
       email,
       phone,
       website,
-    } = this.props.currentUser
+    } = this.state
 
     return (
       <>
